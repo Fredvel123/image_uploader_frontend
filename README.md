@@ -1,3 +1,7 @@
+# link for the designs
+log in : https://dribbble.com/shots/15230513-Sign-up-Daily-UI-001
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
