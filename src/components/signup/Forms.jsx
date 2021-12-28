@@ -1,6 +1,11 @@
-import React, { Fragment } from 'react'
+import React, { Fragment } from 'react';
+// icons
+import { faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons'
+// styled components
+import { DivInput, Icon, Input, Label } from '../../styled-components/sigUp/forms';
 
-function Forms({title, state, setState, placeholder, expression, type}) {
+
+function Forms({title, state, setState, placeholder, expression, type, callback}) {
   const handlerChange = e => {
     setState({...state, value: e.target.value})
   }  
@@ -12,19 +17,26 @@ function Forms({title, state, setState, placeholder, expression, type}) {
         setState({...state, isValid: false})
       }
     }
+    if(callback) {
+      callback();
+    }
   }
   return (
     <Fragment>
       <div>
-       <label htmlFor="">{title}</label>
-       <input 
-        type={type}
-        value={state.value}
-        placeholder={placeholder}
-        onChange={handlerChange}
-        onKeyUp={validations}
-        onBlur={validations}
-        required />
+        <Label htmlFor="">{title} :</Label>
+        <DivInput>
+          <Input
+            type={type}
+            value={state.value}
+            placeholder={placeholder}
+            onChange={handlerChange}
+            onKeyUp={validations}
+            onBlur={validations}
+            required
+            state={state.isValid} />
+          <Icon icon={state.isValid ? faCheckCircle : faTimesCircle} state={state.isValid} />
+        </DivInput>
       </div>
     </Fragment>
   )

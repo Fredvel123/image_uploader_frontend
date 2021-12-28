@@ -1,12 +1,13 @@
 import React, { Fragment } from 'react'
-// components
-// import { BoxInput } from '../../styledComponents/LogInStyles';
+// styled components
+import { ImageStyled } from '../../styled-components/sigUp/ImagesForm';
 // icons
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faIdBadge} from '@fortawesome/free-solid-svg-icons';
+import { Button } from '../../styled-components/sigUp';
 
 function ImageInput({ setState, state }) {
-  // code to add image.
+  // code to add an image.
   const addImage = e => {
     const reader = new FileReader();
     reader.readAsDataURL(e.target.files[0]);
@@ -17,7 +18,7 @@ function ImageInput({ setState, state }) {
   }
   return (
     <Fragment>
-      <div state={state} >
+      <ImageStyled state={state} >
         <label htmlFor="file">
           <FontAwesomeIcon icon={faIdBadge} />
           Image
@@ -26,8 +27,9 @@ function ImageInput({ setState, state }) {
           id="file"
           type="file"
           accept="image/*"
-          onChange={ e =>  addImage(e)} />
-      </div>            
+          onChange={ e => addImage(e)} />
+        <Button>Sign Up</Button>
+      </ImageStyled>            
     </Fragment>
   )
 }
