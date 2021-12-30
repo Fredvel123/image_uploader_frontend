@@ -9,9 +9,24 @@ export const LogInStyled = styled.div`
   background-color: ${colors.dark};
   padding: 5% 5%;
   h4 {
+    margin-top: 2vh;
     text-align: center;
     font-family: ${fonts.letter1};
     color: ${colors.grayDark};
+  }
+  button {
+    cursor: pointer;
+    width: 99%;
+    border: none;
+    margin-top: 5vh;
+    padding: 2vh 10%; 
+    font-size: 20px;
+    font-family: ${fonts.letter2};
+    background: ${colors.pink};
+    transition: ease-in .1s;
+  }
+  button:hover {
+    background: #1094bd;
   }
 `
 

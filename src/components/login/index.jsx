@@ -9,7 +9,7 @@ import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 function LogIn() {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  const [message, setMessage] = useState({message: "", isCreated: null});
+  const [message, setMessage] = useState({message: "", isLogged: null});
 
   // let's connect to my data base, through REST APIs
   const logInUser = async ( _email, _password) => {
@@ -54,12 +54,13 @@ function LogIn() {
             type="password"
             title="Password"
             placeholder="write your password" />
-          {/* { message.isCreated !== null ?
-            <h4>{message.message}</h4> 
-          : null } */}
           <button>Log In</button>
+          { !message.isLogged ?
+            <h4>{message.message}</h4> 
+          : <h4>the user was logged successfully</h4> }
         </form>
       </LogInStyled>
+      <button onClick={() => console.log(message) } >mssage</button>
     </Fragment>
   )
 }
