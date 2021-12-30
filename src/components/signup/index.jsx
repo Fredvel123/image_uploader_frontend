@@ -7,7 +7,7 @@ import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 import Forms from './Forms';
 import ImageInput from './ImageInput';
 
-function LogIn() {
+function SingUp() {
   const [name, setName] = useState({isValid: null, value: ""});
   const [password, setPassword] = useState({isValid: null, value: ""});
   const [newPassword, setNewPassword] = useState({isValid: null, value: ""});
@@ -136,4 +136,4 @@ function LogIn() {
   )
 }
 
-export default LogIn;
+export default SingUp;
