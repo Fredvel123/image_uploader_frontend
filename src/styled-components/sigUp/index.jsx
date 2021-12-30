@@ -8,6 +8,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export const SignIn = styled.div`
   background-color: ${colors.dark};
   padding: 5% 5%;
+  h4 {
+    text-align: center;
+    font-family: ${fonts.letter1};
+    color: ${colors.grayDark};
+  }
 `
 
 export const Header = styled.div`

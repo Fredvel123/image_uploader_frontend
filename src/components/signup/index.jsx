@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react'
 // styled components
-import { Button, ButtonLeft, Form, Header, SignIn } from '../../styled-components/sigUp';
+import { ButtonLeft, Header, SignIn } from '../../styled-components/sigUp';
 // icons 
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 // components
@@ -13,6 +13,7 @@ function LogIn() {
   const [newPassword, setNewPassword] = useState({isValid: null, value: ""});
   const [email, setEmail] = useState({isValid: null, value: ""});
   const [avatar, setAvatar] = useState(null);
+  const [message, setMessage] = useState({message: "", isCreated: null});
   // regular expressions
   const regularExpressions = {
     user: /^[a-zA-Z0-9]{4,16}$/, // Letras, numeros, guion y guion_bajo
@@ -22,14 +23,47 @@ function LogIn() {
     email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
     phone: /^\d{7,14}$/ // 7 a 14 numeros.
   }  
+  // let's connect to my data base, through REST APIs
+  const signUpNewUser = async (_name, _email, _avatar, _password) => {
+    const URL = await fetch('https://image-uploader-freddy.herokuapp.com/api/users/signup', {
+      // mode: 'no-cors',
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        "name": _name,
+        "email": _email,
+        "password": _password,
+        "avatar": _avatar
+      })
+    });
+    const DATA_RES = await URL.json();
+    setMessage(DATA_RES);
+    // console.log(message);
+  }
+  // 
+  // useEffect(() => {
+  //   getAllUsers();
+  // }, [])
   const handlerSubmit = e => {
     e.preventDefault();
     validatePassword();
-    console.log(name);
-    console.log(email);
-    console.log(avatar);
-    console.log(password);
-    console.log(newPassword);
+    if(name.isValid & email.isValid & newPassword.isValid & password.isValid) {
+      signUpNewUser(name.value, email.value, avatar, password.value);
+      if(message.isCreated) {
+        setName({isValid: null, value: ""});
+        setEmail({isValid: null, value: ""});
+        setPassword({isValid: null, value: ""});
+        setNewPassword({isValid: null, value: ""});
+      }
+    } else {
+      setMessage({
+        isCreated: false,
+        message: "Something is bad, try Sign Up again."
+      })
+      // console.log(message);
+    }
   }
 
   // validate password.
@@ -92,6 +126,9 @@ function LogIn() {
               state={avatar}
               setState={setAvatar} />
           </div>
+          { message.isCreated !== null ?
+            <h4>{message.message}</h4> 
+          : null }
           {/* <Button>send</Button> */}
         </form>
       </SignIn>
