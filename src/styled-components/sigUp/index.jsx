@@ -45,6 +45,10 @@ export const Button =  styled.button`
   margin-top: 5vh;
   padding: 2vh 10%; 
   font-size: 20px;
+  cursor: pointer;
   font-family: ${fonts.letter2};
   background: ${colors.pink};
+  &:hover {
+    background: #1094bd;
+  }
 `

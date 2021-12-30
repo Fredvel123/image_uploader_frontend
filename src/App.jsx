@@ -7,7 +7,7 @@ function App() {
   return (
     <Fragment>
       <LogIn />
-      {/* <SingUp /> */}
+      <SingUp />
     </Fragment>
   )
 }

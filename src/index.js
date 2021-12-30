@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import App from './App';
 // css general
 import './styled-components/main.css'
+// redux
+import store from './redux-toolkit/store';
+import { Provider } from 'react-redux';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store} > 
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
