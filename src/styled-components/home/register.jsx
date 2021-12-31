@@ -10,10 +10,12 @@ export const RegisterStyled = styled.div`
   }
   text-align: center;
   h3 {
+    color: ${colors.gray};
     margin-top: 5vh ;
     font-family: ${fonts.letter1};
   }
   h2 {
+    color: ${colors.gray};
     color: ${colors.gray};
     font-family: ${fonts.letter4};
   }
@@ -29,6 +31,7 @@ export const ButtonBox = styled.div`
     margin: 2vh 15%;
     height: 8vh;
     cursor: pointer;
+    color: ${colors.gray};
     transition: ease-in-out .1s;
     background: ${colors.pink};
     &:hover {
