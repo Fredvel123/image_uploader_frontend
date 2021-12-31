@@ -123,6 +123,8 @@ function SingUp({ state, goToHome, goToLogIn }) {
               callback={validatePassword}
               placeholder="write your password again" />
             <ImageInput
+              text="Image"
+              signUpButton={true}
               state={avatar}
               setState={setAvatar} />
           </div>

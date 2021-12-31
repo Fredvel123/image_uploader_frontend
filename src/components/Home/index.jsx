@@ -13,18 +13,18 @@ function Home({ state }) {
   const logIn = useSelector(state => state.logIn.value);
   const dispatch = useDispatch();
   
-  const testTokenValid = async _token => {
-    const URL = await fetch('https://image-uploader-freddy.herokuapp.com/api/users/tokenvalid', {
-      headers: {
-        "access-token": _token
-      }
-    });
-    const RES_DATA = await URL.json();
-    dispatch(setIsLogged( RES_DATA ))
-  }
-  useEffect(() => {
-    // testTokenValid(logIn.token);
-  }, [])
+  // const testTokenValid = async _token => {
+  //   const URL = await fetch('https://image-uploader-freddy.herokuapp.com/api/users/tokenvalid', {
+  //     headers: {
+  //       "access-token": _token
+  //     }
+  //   });
+  //   const RES_DATA = await URL.json();
+  //   dispatch(setIsLogged( RES_DATA ))
+  // }
+  // useEffect(() => {
+  //   testTokenValid(logIn.token);
+  // }, [])
 
   return (
     <Fragment>

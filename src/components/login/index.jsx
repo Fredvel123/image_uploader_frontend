@@ -42,10 +42,8 @@ function LogIn({ state, goToHome }) {
   const handlerSubmit = e => {
     e.preventDefault();
     logInUser( email, password );
-      setEmail("");
-      setPassword("");
+    // openHomeProfile()
   }
-
   // useing local storage
   useEffect(() => {
     const data = localStorage.getItem('isLogged');

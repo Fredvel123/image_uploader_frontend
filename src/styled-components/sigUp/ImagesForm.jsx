@@ -12,11 +12,13 @@ export const ImageStyled = styled.div`
   }
   label {
     cursor: pointer;
-    background:  ${({state}) => state !== null ? "#009688": "#217cb8"}   ;
+    background:  ${({state}) => state !== null ? "#05e210": "#217cb8"}   ;
     padding: 2vh 5%;
     transition: ease-in .2s;
-    /* &:hover {
-      background: #bd42ad;
-    } */
+    text-align: ${({status}) => !status ? "center" : "" };
+    width: ${({status}) => !status ? "120px" : "" };
+    /* position: ${({status}) => !status ? "fixed" : "" } ; */
+    /* top: ${({status}) => !status ? "10vh" : "" } ; */
+    /* left: ${({status}) => !status ? "1%" : "" }; */
   }
 `

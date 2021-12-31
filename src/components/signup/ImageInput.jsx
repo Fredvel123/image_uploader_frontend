@@ -6,7 +6,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faIdBadge} from '@fortawesome/free-solid-svg-icons';
 import { Button } from '../../styled-components/sigUp';
 
-function ImageInput({ setState, state }) {
+function ImageInput({ setState, state, signUpButton, text }) {
   // code to add an image.
   const addImage = e => {
     const reader = new FileReader();
@@ -18,17 +18,21 @@ function ImageInput({ setState, state }) {
   }
   return (
     <Fragment>
-      <ImageStyled state={state} >
+      <ImageStyled state={state} status={signUpButton}  >
         <label htmlFor="file">
-          <FontAwesomeIcon icon={faIdBadge} />
-          Image
+          { signUpButton ?
+            <FontAwesomeIcon icon={faIdBadge} />
+          : null}
+          {text}
         </label>
         <input
           id="file"
           type="file"
           accept="image/*"
           onChange={ e => addImage(e)} />
-        <Button>Sign Up</Button>
+        { signUpButton ?
+          <Button>Sign Up</Button>
+        : null}
       </ImageStyled>            
     </Fragment>
   )
