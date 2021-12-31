@@ -12,6 +12,7 @@ import { setIsLogged } from '../../redux-toolkit/slices/isLogged';
 
 
 function LogIn({ state, goToHome }) {
+  const [clicked, setclicked] = useState(false);
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   // const [message, setMessage] = useState({message: "", isLogged: null});
@@ -77,10 +78,13 @@ function LogIn({ state, goToHome }) {
             type="password"
             title="Password"
             placeholder="write your password" />
-          <button>Log In</button>
-          { !logIn.isLogged ?
+          <button onClick={() => setclicked(true)} >Log In</button>
+          { !logIn.isLogged & clicked?
             <h4>{logIn.message}</h4> 
-          : <h4>the user was logged successfully, <span>You can Go to home</span> </h4> }
+          : null }
+          { logIn.isLogged & clicked?
+            <h4>the user was logged successfully, <span>You can Go to home</span> </h4> 
+          : null }
         </form>
       </LogInStyled>
       {/* <button onClick={() => console.log(message) } >mssage</button> */}

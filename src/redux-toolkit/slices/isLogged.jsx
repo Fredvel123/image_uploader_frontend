@@ -5,6 +5,7 @@ export const isLoggedSliced = createSlice({
   initialState: {
     value: {
       isLogged: false,
+      // testToken: false,
       token: "",
       message: ""
     }
