@@ -11,12 +11,12 @@ import { useDispatch } from 'react-redux';
 import { setIsLogged } from '../../redux-toolkit/slices/isLogged';
 
 
-function LogIn() {
+function LogIn({ state, goToHome }) {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   // const [message, setMessage] = useState({message: "", isLogged: null});
   // redux
-  const isLogged = useSelector(state => state.isLogged.value);
+  const logIn = useSelector(state => state.logIn.value);
   const dispatch = useDispatch();
 
   // let's connect to my data base, through REST APIs
@@ -52,14 +52,14 @@ function LogIn() {
   }, [dispatch])
 
   useEffect(() => {
-    localStorage.setItem('isLogged', JSON.stringify(isLogged) )
-  }, [isLogged])
+    localStorage.setItem('isLogged', JSON.stringify(logIn) )
+  }, [logIn])
 
   return (
     <Fragment>
-      <LogInStyled>
+      <LogInStyled state={state} >
         <Header>
-          <ButtonLeft icon={faAngleLeft} />
+          <ButtonLeft onClick={goToHome} icon={faAngleLeft} />
           <h3>Log In</h3>
         </Header>
         <form action="" onSubmit={handlerSubmit}>
@@ -76,8 +76,8 @@ function LogIn() {
             title="Password"
             placeholder="write your password" />
           <button>Log In</button>
-          { !isLogged.isLogged ?
-            <h4>{isLogged.message}</h4> 
+          { !logIn.isLogged ?
+            <h4>{logIn.message}</h4> 
           : <h4>the user was logged successfully</h4> }
         </form>
       </LogInStyled>

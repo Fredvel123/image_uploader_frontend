@@ -6,6 +6,9 @@ import fonts from '../fonst.json';
 import colors from '../colors.json';
 
 export const LogInStyled = styled.div`
+  transition: ease-in-out .1s;
+  position:  ${({state}) => state ? "" : "absolute" };
+  transform: ${({state}) => state ? 'translateX(0)' : 'translateX(-100%)' };
   background-color: ${colors.dark};
   padding: 5% 5%;
   h4 {

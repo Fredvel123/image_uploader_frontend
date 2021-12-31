@@ -6,12 +6,21 @@ import colors from "../colors.json";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const SignIn = styled.div`
+  transition: ease-in-out .3s;
+  transform: ${({state}) => state ? 'translateX(0)' : 'translateX(500%)' };
   background-color: ${colors.dark};
   padding: 5% 5%;
   h4 {
     text-align: center;
     font-family: ${fonts.letter1};
     color: ${colors.grayDark};
+  }
+  span {
+    color: #33e70f;
+    cursor: pointer;
+    &:hover {
+      color: #ee2d1f;
+    }
   }
 `
 

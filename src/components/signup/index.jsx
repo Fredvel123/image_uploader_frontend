@@ -7,7 +7,7 @@ import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 import Forms from './Forms';
 import ImageInput from './ImageInput';
 
-function SingUp() {
+function SingUp({ state, goToHome, goToLogIn }) {
   const [name, setName] = useState({isValid: null, value: ""});
   const [password, setPassword] = useState({isValid: null, value: ""});
   const [newPassword, setNewPassword] = useState({isValid: null, value: ""});
@@ -87,9 +87,9 @@ function SingUp() {
 
   return (
     <Fragment>
-      <SignIn>
+      <SignIn state={state} >
         <Header>
-          <ButtonLeft icon={faAngleLeft} />
+          <ButtonLeft onClick={goToHome} icon={faAngleLeft} />
           <h3>Sign Up</h3>
         </Header>
         <form action="" onSubmit={handlerSubmit}>
@@ -126,10 +126,10 @@ function SingUp() {
               state={avatar}
               setState={setAvatar} />
           </div>
-          { message.isCreated !== null ?
-            <h4>{message.message}</h4> 
-          : null }
           {/* <Button>send</Button> */}
+          { message.isCreated ?
+            <h4> {message.message} <span onClick={goToLogIn} >Log In</span> </h4> 
+          : <h4>{message.message}</h4> }
         </form>
       </SignIn>
     </Fragment>
