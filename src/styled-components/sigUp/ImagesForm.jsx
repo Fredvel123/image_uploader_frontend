@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-
+// colors 
+import colors from '../colors.json';
 
 export const ImageStyled = styled.div`
   display: flex;
