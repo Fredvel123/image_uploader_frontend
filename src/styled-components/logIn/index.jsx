@@ -24,6 +24,7 @@ export const LogInStyled = styled.div`
     margin-top: 5vh;
     padding: 2vh 10%; 
     font-size: 20px;
+    color: ${colors.gray};
     font-family: ${fonts.letter2};
     background: ${colors.pink};
     transition: ease-in .1s;
@@ -39,6 +40,7 @@ export const Header = styled.div`
   display: flex;
   align-items: center;
   h3 {
+    color: ${colors.gray};
     font-family: ${fonts.letter1};
     font-size: 35px;
     margin-left: 10px;

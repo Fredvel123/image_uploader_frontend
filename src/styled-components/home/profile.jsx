@@ -35,10 +35,12 @@ export const ProfileStyled = styled.div`
     transform: scale(1.3);
   }
   h3 {
+    color: ${colors.gray};
     font-family: ${fonts.letter1};
     font-size: 20px;
   }
   h4 {
+    color: ${colors.gray};
     margin-top: 2vh;
     font-family: ${fonts.letter2};
   }
@@ -49,6 +51,7 @@ export const LogOut = styled.button`
   cursor: pointer;
   background: ${colors.grayDark};
   padding: 1%;
+  color: ${colors.gray};
   transition: ease-in-out .2s;
   top: 2vh;
   left: 1%;
@@ -58,6 +61,7 @@ export const LogOut = styled.button`
 `
 export const AddImage = styled.button`
   position: fixed;
+  color: ${colors.gray};
   border: none;
   cursor: pointer;
   background: ${colors.grayDark};

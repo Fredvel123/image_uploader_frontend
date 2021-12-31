@@ -52,4 +52,5 @@ export const Input = styled.input`
 export const Label = styled.label`
   font-family: ${fonts.letter3};
   margin-left: 0.5%;
+  color: ${colors.gray};
 `

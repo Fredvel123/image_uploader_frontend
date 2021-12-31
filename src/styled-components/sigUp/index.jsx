@@ -30,6 +30,7 @@ export const Header = styled.div`
   display: flex;
   align-items: center;
   h3 {
+    color: ${colors.gray};
     font-family: ${fonts.letter1};
     font-size: 35px;
     margin-left: 10px;
@@ -49,6 +50,7 @@ export const ButtonLeft = styled(FontAwesomeIcon)`
 `
 
 export const Button =  styled.button`
+  color: ${colors.gray};
   width: 99%;
   border: none;
   margin-top: 5vh;

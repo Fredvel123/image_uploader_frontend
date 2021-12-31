@@ -15,6 +15,7 @@ export const ImageStyled = styled.div`
     background:  ${({state}) => state !== null ? "#05e210": "#217cb8"}   ;
     padding: 2vh 5%;
     transition: ease-in .2s;
+    color: ${colors.gray};
     text-align: ${({status}) => !status ? "center" : "" };
     width: ${({status}) => !status ? "120px" : "" };
     /* position: ${({status}) => !status ? "fixed" : "" } ; */
