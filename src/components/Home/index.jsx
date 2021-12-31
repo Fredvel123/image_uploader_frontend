@@ -5,6 +5,7 @@ import { HomeStyled } from '../../styled-components/home';
 import { useSelector } from 'react-redux';
 // components
 import Register from './Register';
+import Profile from './Profile';
 
 
 function Home({ state }) {
@@ -13,7 +14,7 @@ function Home({ state }) {
     <Fragment>
       <HomeStyled state={state} >
         { logIn.isLogged ?
-          <h3>tienes acceso aqui</h3>     
+          <Profile />     
         : <Register /> }
       </HomeStyled>
     </Fragment>

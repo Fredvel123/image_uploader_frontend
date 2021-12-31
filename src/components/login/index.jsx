@@ -41,6 +41,8 @@ function LogIn({ state, goToHome }) {
   const handlerSubmit = e => {
     e.preventDefault();
     logInUser( email, password );
+      setEmail("");
+      setPassword("");
   }
 
   // useing local storage
@@ -78,7 +80,7 @@ function LogIn({ state, goToHome }) {
           <button>Log In</button>
           { !logIn.isLogged ?
             <h4>{logIn.message}</h4> 
-          : <h4>the user was logged successfully</h4> }
+          : <h4>the user was logged successfully, <span>You can Go to home</span> </h4> }
         </form>
       </LogInStyled>
       {/* <button onClick={() => console.log(message) } >mssage</button> */}
